@@ -1,10 +1,11 @@
 {
   "name": "react-essentials-start",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "serve": "vite preview"
   },
   "dependencies": {
     "react": "^18.0.0",
@@ -12,8 +13,31 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
-    "vite": "^4.3.9"
+    "vite": "^5.0.12"
   },
   "keywords": [],
-  "description": ""
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurrrrri/react-project.git"
+  },
+  "author": "yurison",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yurrrrri/react-project/issues"
+  },
+  "homepage": "https://github.com/yurrrrri/react-project#readme",
+  "description": "",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
