@@ -14,18 +14,6 @@ export default function GameBoard({ onSelectSquare, turns }) {
     gameBoard[row][col] = player;
   }
 
-  //   const [gameBoard, setGameBoard] = useState(initialGameBoard);
-
-  //   function handleSelectSquare(rowIndex, colIndex) {
-  //     setGameBoard((prevBoard) => {
-  //       const updatedBoard = [...prevBoard.map((innerArray) => [...innerArray])];
-  //       updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
-  //       return updatedBoard;
-  //     });
-
-  //     onSelectSquare();
-  //   }
-
   return (
     <ol id="game-board">
       {gameBoard.map((row, rowIndex) => (
