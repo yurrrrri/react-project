@@ -9,6 +9,7 @@ export default function Examples() {
 
   function handleSelect(selectedButton) {
     setTopic(selectedButton);
+    console.log(selectedButton);
   }
 
   return (
