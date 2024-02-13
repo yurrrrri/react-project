@@ -1,17 +1,13 @@
-import Header from "./components/Header/Header";
-import CoreConcepts from "./components/CoreConcepts";
-import Examples from "./components/Examples";
+import AuthInputs from './components/AuthInputs.jsx';
+import Header from './components/Header.jsx';
 
-function App() {
+export default function App() {
   return (
     <>
       <Header />
       <main>
-        <CoreConcepts />
-        <Examples />
+        <AuthInputs />
       </main>
     </>
   );
 }
-
-export default App;
