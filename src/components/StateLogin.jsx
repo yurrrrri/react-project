@@ -27,6 +27,8 @@ export default function Login() {
   function handleSubmit(event) {
     event.preventDefault();
 
+    // validation logic
+
     console.log(enteredValues);
   }
 
