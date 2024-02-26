@@ -23,6 +23,7 @@ export default function Checkout() {
     isLoading: isSending,
     error,
     sendRequest,
+    clearData,
   } = useHttp("http://localhost:3000/orders", requestConfig);
 
   const cartTotal = cartCtx.items.reduce(
@@ -32,6 +33,12 @@ export default function Checkout() {
 
   function handleClose() {
     userProgressCtx.hideCheckout();
+  }
+
+  function handleFinish() {
+    userProgressCtx.hideCheckout();
+    cartCtx.clearCart();
+    clearData();
   }
 
   function handleSubmit(event) {
@@ -63,6 +70,21 @@ export default function Checkout() {
     actions = <span>Sending order data...</span>;
   }
 
+  if (data && !error) {
+    return (
+      <Modal open={userProgressCtx.progress === "checkout"} onClose={handleFinish}>
+        <h2>Success!</h2>
+        <p>Your order was submitted successfully.</p>
+        <p>
+          We will get back to you with more details via email within the next few minutes.
+        </p>
+        <p className="modal-actions">
+          <Button onClick={handleFinish}>Okay</Button>
+        </p>
+      </Modal>
+    );
+  }
+
   return (
     <Modal open={userProgressCtx.progress === "checkout"} onClose={handleClose}>
       <form onSubmit={handleSubmit}>
@@ -75,6 +97,7 @@ export default function Checkout() {
           <Input label="Postal Code" type="text" id="postal-code" />
           <Input label="City" type="text" id="city" />
         </div>
+        {error && <Error title="Failed to submit order" message={error} />}
         <p className="modal-actions">{actions}</p>
       </form>
     </Modal>
