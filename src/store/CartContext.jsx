@@ -60,7 +60,7 @@ export function CartContextProvider({ children }) {
   }
 
   function removeItem(id) {
-    dispatchCartAction({ type: "REMOVE_ITEM", item });
+    dispatchCartAction({ type: "REMOVE_ITEM", id });
   }
 
   const cartContext = {
