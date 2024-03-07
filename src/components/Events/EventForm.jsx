@@ -8,7 +8,7 @@ import ErrorBlock from "../UI/ErrorBlock.jsx";
 export default function EventForm({ inputData, onSubmit, children }) {
   const [selectedImage, setSelectedImage] = useState(inputData?.image);
 
-  const { data, isPending, isError, error } = useQuery({
+  const { data, isPending, isError } = useQuery({
     queryKey: ["events-images"],
     queryFn: fetchSelectableImages,
   });
@@ -69,22 +69,12 @@ export default function EventForm({ inputData, onSubmit, children }) {
       <div className="controls-row">
         <p className="control">
           <label htmlFor="date">Date</label>
-          <input
-            type="date"
-            id="date"
-            name="date"
-            defaultValue={inputData?.date ?? ""}
-          />
+          <input type="date" id="date" name="date" defaultValue={inputData?.date ?? ""} />
         </p>
 
         <p className="control">
           <label htmlFor="time">Time</label>
-          <input
-            type="time"
-            id="time"
-            name="time"
-            defaultValue={inputData?.time ?? ""}
-          />
+          <input type="time" id="time" name="time" defaultValue={inputData?.time ?? ""} />
         </p>
       </div>
 
